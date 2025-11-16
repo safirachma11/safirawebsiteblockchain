@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blockchain Simulator - Versi Final</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <button id="tab-home" class="active">Home</button>
+      <button id="tab-about">About Me</button>
+      <button id="tab-hash">Hash</button>
+      <button id="tab-block">Block</button>
+      <button id="tab-chain">Block Chain</button>
+      <button id="tab-ecc">ECC Signature</button>
+      <button id="tab-consensus">Konsensus</button>
+    </div>
+
+    <div id="page-home" class="page active">
+      <div class="hero">
+        <h2>Selamat Datang di Website Belajar Blockchain</h2>
+        <p>Belajar konsep Blockchain, Hash, Mining, ECC Signature, dan Konsensus dalam satu tempat interaktif.</p>
+        <div id="datetime"></div>
+      </div>
+
+      <div class="home-content-box">
+        <p>
+          Website ini dirancang untuk membantu memahami konsep dasar serta proses
+          simulasi dalam teknologi blockchain dengan cara yang mudah, interaktif, 
+          dan praktis.
+        </p>
+
+        <h3>Petunjuk Penggunaan Fitur Website</h3>
+        <ul>
+          <li><b>Hash:</b> Lihat bagaimana SHA-256 menghasilkan hash unik.</li>
+          <li><b>Block:</b> Simulasikan proses mining block.</li>
+          <li><b>Blockchain:</b> Bangun rantai block dan lihat keterkaitannya.</li>
+          <li><b>ECC Signature:</b> Pelajari cara kerja tanda tangan digital.</li>
+          <li><b>Konsensus:</b> Simulasikan proses sinkronisasi antar node.</li>
+        </ul>
+      </div>
+
+      <h3 style="text-align:center; margin-bottom:25px; color:#1a1f36;">Fitur Simulasi</h3>
+      <div class="feature-grid">
+
+        <button class="feature-item" id="btn-to-hash">
+          <i class="fas fa-key"></i>
+          <h4>Hash Simulator</h4>
+        </button>
+
+        <button class="feature-item" id="btn-to-block">
+          <i class="fas fa-cube"></i>
+          <h4>Block Mining</h4>
+        </button>
+
+        <button class="feature-item" id="btn-to-chain">
+          <i class="fas fa-link"></i>
+          <h4>Blockchain</h4>
+        </button>
+
+        <button class="feature-item" id="btn-to-ecc">
+          <i class="fas fa-pen-nib"></i>
+          <h4>ECC Signature</h4>
+        </button>
+
+        <button class="feature-item" id="btn-to-consensus">
+          <i class="fas fa-network-wired"></i>
+          <h4>Konsensus</h4>
+        </button>
+
+      </div>
+    </div>
+    
+    <div id="page-about" class="page">
+      <div class="section profile-main-container">
+    
+    <h3 class="profile-label">PROFIL</h3> 
+
+    <div class="about-container-new"> 
+        <img src="safira.jpg" alt="Foto Profil" class="profile-pic" />
+        
+        <div class="name-description-wrapper">
+            
+            <h2 class="profile-name-aligned">Safira Rachma Dewi</h2>
+            <p>
+              Saya adalah mahasiswa Teknologi Rekayasa Multimedia yang memiliki
+              ketertarikan besar pada 3D modeling dan aktif mengembangkan
+              keterampilan melalui berbagai proyek langsung serta kolaborasi
+              dalam tim dan organisasi mahasiswa. Saya bersemangat untuk
+              berinovasi di industri kreatif digital, terus belajar, dan
+              menantang diri sendiri, termasuk dalam meningkatkan kemampuan
+              berbicara di depan umum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>PENDIDIKAN</h3>
+        <div class="exp-box">
+          <p>
+            <b>Politeknik Elektronika Negeri Surabaya</b>  D4 Teknologi
+            Rekayasa Multimedia
+          </p>
+          <p><b>SMA Negeri 1 Waru Sidoarjo</b> MIPA</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>PENGHARGAAN</h3>
+        <div class="exp-box">
+          <p><b>30 Besar Finalis Approve BIZCLASH</b></p>
+          <p>
+            Sebagai Chief Marketing Officer Lelicious, berperan dalam
+            penyusunan proposal dan riset pasar yang membawa tim masuk 30
+            besar ajang BIZZClass oleh Kasir Pintar.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>PENGALAMAN ORGANISASI</h3>
+        <div class="exp-box">
+          <p><b>Oktober 2025 – Sekarang</b></p>
+          <p>
+            <b>HIMA Multimedia Broadcasting – Kepala Departemen Kreatif</b>
+          </p>
+          <ul>
+            <li>
+              Memimpin dan membimbing staff muda dalam program pengembangan
+              warga.
+            </li>
+            <li>
+              Meningkatkan minat dan bakat anggota komunitas DTMK melalui
+              keiatan kreatif.
+            </li>
+          </ul>
+
+          <p><b>Oktober 2024 – Agustus 2025</b></p>
+          <p><b>FKMPI – Tim Kerja Nasional Bidang Kepemudaan</b></p>
+          <ul>
+            <li>
+              Mendukung program nasional untuk peningkatan keterampilan dan
+              pengetahuan anggota.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>PENGALAMAN KERJA</h3>
+        <div class="exp-box">
+          <p><b>Part Time – Crew Outlet</b></p>
+          <ul>
+            <li>
+              Melayani pelanggan, menyiapkan pesanan, dan menjaga kebersihan
+              area outlet.
+            </li>
+            <li>
+              Mengembangkan kemampuan komunikasi, kerja sama tim, dan
+              pelayanan pelanggan.
+            </li>
+          </ul>
+
+          <p><b>Freelance – 3D Modeling</b></p>
+          <ul>
+            <li>
+              Membuat dan mengembangkan model 3D karakter, furniture, dan
+              elemen interior.
+            </li>
+            <li>
+              Berkoordinasi dengan klien untuk konsep dan revisi proyek.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>PENGALAMAN KEPANITIAAN</h3>
+        
+        <div class="exp-box">
+          <p><b>Agustus 2025</b></p>
+          <p>
+            <b>PKKMB X TECHNOGEAR PENS 2025 – Steering Committee</b>
+          </p>
+        </div>
+
+        <div class="exp-box">
+          <p><b>April 2025</b></p>
+          <p>
+            <b>DTMK CUP – Steering Committee & Ketua Pelaksana</b>
+          </p>
+        </div>
+
+        <div class="exp-box">
+          <p><b>Februari 2025</b></p>
+          <p>
+            <b>HIMA Multimedia Broadcasting - Indigo World Orientation – Steering Committee</b>
+          </p>
+        </div>
+
+        <div class="exp-box">
+          <p><b>Februari 2025</b></p>
+          <p>
+            <b>DTMK EXPO – Steering Committee & Sekretaris</b>
+          </p>
+        </div>
+
+        <div class="exp-box">
+          <p><b>Agustus 2024</b></p>
+          <p>
+            <b>PKKMB X TECHNOGEAR PENS 2024 – Divisi Liaison Officer</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="contact-title">Kontak</h3>
+
+        <div class="contact-info-container">
+          <div class="contact-info-box">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Alamat</h4>
+              <p>Surabaya, Jawa Timur</p>
+            </div>
+          </div>
+
+          <div class="contact-info-box">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>safiraachmaa.01@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-box">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Telepon</h4>
+              <p>+6281331811250</p>
+            </div>
+          </div>
+        </div>
+
+        <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.654817578028!2d112.79169177499997!3d-7.280173692725455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1028b3f2c5%3A0x860a975b94bfd0a!2sPoliteknik%20Elektronika%20Negeri%20Surabaya!5e0!3m2!1sen!2sid!4v1731675496587!5m2!1sen!2sid"
+              width="100%"
+              height="350"
+              style="border: 0; border-radius: 10px; margin-top: 20px"
+              loading="lazy"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+      </div>
+
+      <div class="section">
+        <h3>💬 Hubungi Saya</h3>
+        <form class="contact-form">
+          <input type="text" placeholder="Nama Anda" required />
+          <input type="email" placeholder="Email Anda" required />
+          <textarea placeholder="Pesan..." rows="4" required></textarea>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+    
+    <div id="page-hash" class="page">
+      <h2>Hash Generator</h2>
+      <label for="hash-input">Text Input:</label>
+      <textarea id="hash-input" rows="4"></textarea>
+      <label>SHA-256 Hash:</label>
+      <div id="hash-output" class="output"></div>
+    </div>
+
+    <div id="page-block" class="page">
+      <h2>Single Block</h2>
+      <label for="block-number"># (Nomor Block):</label>
+      <input id="block-number" type="number" min="0" value="0" />
+      <label for="block-data">Data:</label>
+      <textarea id="block-data" rows="4"></textarea>
+      <label for="block-nonce">Nonce:</label>
+      <input id="block-nonce" type="text" maxlength="9" />
+      <label for="block-timestamp">Timestamp:</label>
+      <input id="block-timestamp" type="text" readonly />
+      <label>Hash:</label>
+      <div id="block-hash" class="output"></div>
+      <button id="btn-mine" class="mine">Mine</button>
+      <label for="speed-control">Kecepatan Mining:</label>
+      <select id="speed-control">
+        <option value="1">Normal</option>
+        <option value="10">10x Lebih Cepat</option>
+        <option value="50">50x Lebih Cepat</option>
+      </select>
+      <div id="mining-status" class="status"></div>
+    </div>
+
+    <div id="page-chain" class="page">
+      <h2>Blockchain</h2>
+      <div id="blockchain" class="chain-container"></div>
+      <div class="chain-controls">
+        <button id="btn-add-block">Add Block</button>
+      </div>
+    </div>
+
+    <div id="page-ecc" class="page">
+      <h2>Verifikasi ECC Digital Signature</h2>
+      <button id="btn-generate-key">Generate Key Pair</button>
+      <p>Public Key dan Private Key dapat diedit untuk percobaan.</p>
+      <label>Public Key:</label>
+      <textarea id="ecc-public" rows="3"></textarea>
+      <label>Private Key:</label>
+      <textarea id="ecc-private" rows="3"></textarea>
+      <hr />
+      <label>Pesan yang akan ditandatangani:</label>
+      <textarea id="ecc-message" rows="3"></textarea>
+      <button id="btn-sign">Sign Message</button>
+      <label>Hasil Signature:</label>
+      <textarea id="ecc-signature" rows="3" readonly></textarea>
+      <hr />
+      <button id="btn-verify">Verify Signature</button>
+      <div id="ecc-verify-result" class="output"></div>
+    </div>
+ 
+    <div id="page-consensus" class="page">
+      <h2>Simulasi Konsensus</h2>
+      <div class="wallets">
+        <div class="wallet" data-user="A">
+          <h3>User A</h3>
+          <div>Saldo: <span id="saldo-A">100</span></div>
+          <label for="receiver-A">Penerima:</label>
+          <select id="receiver-A">
+            <option value="B">User B</option>
+            <option value="C">User C</option>
+          </select>
+          <label for="amount-A">Jumlah:</label>
+          <input id="amount-A" type="number" min="1" value="10" />
+          <button id="send-A">Kirim</button>
+        </div>
+        <div class="wallet" data-user="B">
+          <h3>User B</h3>
+          <div>Saldo: <span id="saldo-B">100</span></div>
+          <label for="receiver-B">Penerima:</label>
+          <select id="receiver-B">
+            <option value="A">User A</option>
+            <option value="C">User C</option>
+          </select>
+          <label for="amount-B">Jumlah:</label>
+          <input id="amount-B" type="number" min="1" value="10" />
+          <button id="send-B">Kirim</button>
+        </div>
+        <div class="wallet" data-user="C">
+          <h3>User C</h3>
+          <div>Saldo: <span id="saldo-C">100</span></div>
+          <label for="receiver-C">Penerima:</label>
+          <select id="receiver-C">
+            <option value="A">User A</option>
+            <option value="B">User B</option>
+          </select>
+          <label for="amount-C">Jumlah:</label>
+          <input id="amount-C" type="number" min="1" value="10" />
+          <button id="send-C">Kirim</button>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 25px;">Transactions</h3>
+      <div>
+        <textarea
+          id="mempool"
+          rows="3"
+          placeholder="Setiap transaksi di baris baru. Contoh: A -> B:10"
+        ></textarea>
+      </div>
+      
+      <div style="margin-top: 15px;">
+        <button id="btn-mine-all" class="mine">Mine Semua Transaksi</button>
+        <button id="btn-verify-consensus" style="background: #5cb85c;">Verify</button>
+        <button id="btn-consensus">Consensus</button>
+      </div>
+      
+      <h3 style="margin-top: 30px">Blockchain Tiap User</h3>
+      <p style="font-size: 13px; color: #6c757d;">Geser horizontal untuk melihat rantai block.</p>
+      
+      <div id="chains">
+        <h4>Database User A</h4>
+        <div id="chain-A" class="chain-row"></div>
+        <h4>Database User B</h4>
+        <div id="chain-B" class="chain-row"></div>
+        <h4>Database User C</h4>
+        <div id="chain-C" class="chain-row"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <img src="Logo_PENS.png" class="footer-logo" />
+        <img src="Logo_TRM.png" class="footer-logo" />
+      </div>
+
+      <div class="footer-text">
+        <p>© 2025 D4 Teknologi Rekayasa Multimedia | Politeknik Elektronika Negeri Surabaya</p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="app4.js"></script>
+  </body>
+</html>
