@@ -282,10 +282,10 @@
           <label>Hash:</label>
           <div id="block-hash" class="output"></div>
 
-          <label for="mining-difficulty">Target Kesulitan (Prefix Hash):</label>
+          <label for="mining-difficulty">Prefix Hash:</label>
           <input id="mining-difficulty" type="text" value="0000" readonly/>
 
-          <button id="btn-mine" class="mine">Mine (Proof of Work)</button>
+          <button id="btn-mine" class="mine">Mine</button>
 
           <label for="speed-control">Kecepatan Mining:</label>
           <select id="speed-control">
@@ -310,7 +310,7 @@
       <div id="page-ecc" class="page">
         <h2>Verifikasi ECC Digital Signature</h2>
 
-        <button id="btn-generate-key">Generate Key Pair (Publik & Privat)</button>
+        <button id="btn-generate-key">Generate Key Pair (Publik & Private)</button>
         <p>
           <small
             >Public Key dan Private Key dapat diedit untuk percobaan, namun ini
@@ -329,7 +329,7 @@
         <textarea id="ecc-message" rows="3"></textarea>
 
         <button id="btn-sign">Sign Message</button>
-        <label>Hasil Signature (DER hex):</label>
+        <label>Hasil Signature:</label>
         <textarea id="ecc-signature" rows="3" readonly></textarea>
 
         <hr />
@@ -338,11 +338,11 @@
       </div>
 
       <div id="page-consensus" class="page">
-        <h2>Simulasi Konsensus (PoW)</h2>
+        <h2>Simulasi Konsensus</h2>
 
         <div class="wallets">
           <div class="wallet" data-user="A">
-            <h3>User A (Miner)</h3>
+            <h3>User A</h3>
             <div>Saldo: <span id="saldo-A">100</span></div>
             <label>Penerima:</label>
             <select id="receiver-A">
@@ -355,7 +355,7 @@
           </div>
 
           <div class="wallet" data-user="B">
-            <h3>User B (Miner)</h3>
+            <h3>User B</h3>
             <div>Saldo: <span id="saldo-B">100</span></div>
             <label>Penerima:</label>
             <select id="receiver-B">
@@ -368,7 +368,7 @@
           </div>
 
           <div class="wallet" data-user="C">
-            <h3>User C (Miner)</h3>
+            <h3>User C</h3>
             <div>Saldo: <span id="saldo-C">100</span></div>
             <label>Penerima:</label>
             <select id="receiver-C">
@@ -394,14 +394,14 @@
         <div style="margin-top: 12px">
           <button id="btn-mine-all">Mine Semua Transaksi</button>
           <button id="btn-verify-consensus">Verifikasi Rantai</button>
-          <button id="btn-consensus">Terapkan Konsensus (Majoritas)</button>
+          <button id="btn-consensus">Terapkan Konsensus</button>
         </div>
 
-        <h3 style="margin-top: 20px">Blockchain Tiap User (Node)</h3>
+        <h3 style="margin-top: 20px">Blockchain Tiap User</h3>
         <p>
           <small
             >Setiap user memiliki salinan Blockchain-nya sendiri. Konsensus
-            dipakai untuk menyamakan versi terpanjang/tervalid.</small
+            dipakai untuk menyamakan versi tervalid.</small
           >
         </p>
         <div id="chains">
